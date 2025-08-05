@@ -2,10 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import telegram
 import time
+import os
 
-# Telegram settings
-TELEGRAM_TOKEN = '8390239033:AAFB9RrLYxLuuMBUewzvviMcE_JOvtz2J7A'
-CHAT_ID = '5477799468'
+# Telegram settings (load from environment variables)
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+CHAT_ID = os.getenv('CHAT_ID')
 bot = telegram.Bot(token=TELEGRAM_TOKEN)
 
 # List of jobs that were already sent
